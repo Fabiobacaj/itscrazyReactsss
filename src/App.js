@@ -1,32 +1,16 @@
-// import Inizio from "./lezioni/5-useRef/inizio/useref-example";
-// import Componente1 from "./lezioni/Componente1";  
-// import img from './Product.js';
+import React from 'react';
 import Product from "./Product";
-
-const arr = [
-  {
-    nome: "10$ amazon + 20p",
-    img: 'https://a71eba0458acf57331d3-d31ce5ebd093935dff8526660841b743.ssl.cf2.rackcdn.com/products/f20477.jpg',
-    prezzo: 2.16,
-    costofinale: 7.4
-  },
-  {
-    nome: "12$ amazon + 7p",
-    img: 'https://a71eba0458acf57331d3-d31ce5ebd093935dff8526660841b743.ssl.cf2.rackcdn.com/products/f21744.jpg',
-    prezzo: 5.40,
-    costofinale: 10.5
-  }
-];
+import products from "./products.js";
 
 
 function App() {
   return (
     <div className="App">
-      <section>
+      <section style={{display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center', padding: '20px'}}>
         {
-          arr.map(el => {
+          products.map((el) => {
             console.log(el)
-            return <Product{...el}/>
+            return <Product key={el.id} {...el}/>
           })
         }
       </section>
